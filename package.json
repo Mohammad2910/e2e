@@ -6,11 +6,9 @@
     "test": "cypress run",
     "open": "cypress open --config baseUrl=http://localhost:3000"
   },
-
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.9.0"
+    "cypress": "^10.11.0"
   }
 }
-
