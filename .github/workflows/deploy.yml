@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+
+  cypress-run:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: e2e
+      run: sudo docker image prune -f
+    - name: compose build 
+      run: sudo docker-compose build e2e
+    - name: compose up
+      run: sudo docker-compose up -d e2e
